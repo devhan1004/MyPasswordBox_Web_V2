@@ -10,8 +10,8 @@
         return;
     }
 
-    //var uri = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/Q_SiteByAccountID?accountID=1075&spTemp=&callback=aa';
-    var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+    //var uri = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/Q_SiteByAccountID?accountID=1075&spTemp=&callback=aa';
+    var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
     var strURLParam = 'Q_SiteByAccountID?';
     strURLParam += "accountID=" + userInfo.UserAccountID;
     strURLParam += "&spTemp="
@@ -21,8 +21,7 @@
     
     $.ajax({
         url: strURL,
-        crossDomain: true,
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function (data) {
             var len = data.length;
 

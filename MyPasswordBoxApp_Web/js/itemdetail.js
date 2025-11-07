@@ -17,8 +17,8 @@ $(document).on('pagebeforeshow', '#index', function () {
     try {
         var strSiteID = getParameterByName("SiteID");
 
-        //var uri = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/Q_SiteByID?ID=1&callback=aa';
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+        //var uri = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/Q_SiteByID?ID=1&callback=aa';
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
         var strURLParam = 'Q_SiteByID?';
         strURLParam += "ID=" + strSiteID;
         var strURL = strURLBase + strURLParam;
@@ -28,8 +28,7 @@ $(document).on('pagebeforeshow', '#index', function () {
         
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 var len = data.length;
                 var siteItem = {
@@ -75,7 +74,7 @@ $(document).one("pagecreate", "#index", function () {
         var userInfo = GetUserInfoData();
         var strSiteID = getParameterByName("SiteID");
 
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
         var strURLParam = 'D_SiteByID?';
         strURLParam += "AccountID=" + userInfo.UserAccountID
         strURLParam += "&siteID=" + strSiteID;
@@ -86,8 +85,7 @@ $(document).one("pagecreate", "#index", function () {
         var bRet = false;
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 console.log("success to delete data");
                 console.log(data);

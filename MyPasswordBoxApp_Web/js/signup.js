@@ -84,8 +84,8 @@ $(document).one("pagecreate", "#index", function () {
         //var strPasswordFromDBDecrypted = getDecryption(strPasswordEncypted, strPassKey);
         //alert(strPasswordFromDBDecrypted);
 
-        //https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/AccountSPs?UserName=devhan2@gmail.com&Password=test1111&Birthday=1/1/2016&spType=I_Account
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/';
+        //https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/AccountSPs?UserName=devhan2@gmail.com&Password=test1111&Birthday=1/1/2016&spType=I_Account
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/';
         var strURLParam = 'AccountSPs?';
         //strURLParam += "UserName=" + encodeURIComponent(strEmailEncypted);
         strURLParam += "UserName=" + encodeURIComponent(strEmailEncypted);
@@ -103,8 +103,7 @@ $(document).one("pagecreate", "#index", function () {
         var bRet = false;
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 var len = data.length;
                 var intAccountID = data;

@@ -94,8 +94,8 @@ function fnLogin() {
     //console.log(strEmailEncypted);
     //console.log(encodeURIComponent(strEmailEncypted));
 
-    //https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/Q_AccountByUserName?UserName=wPON//zJ2JZbWj6UPaZT9PypW7eHFgosjmRkPdxubGU=@gmail.com&callback=aa
-    var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/';
+    //https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/Q_AccountByUserName?UserName=wPON//zJ2JZbWj6UPaZT9PypW7eHFgosjmRkPdxubGU=@gmail.com&callback=aa
+    var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/';
     var strURLParam = 'Q_AccountByUserName?';
     strURLParam += "UserName=" + encodeURIComponent(strEmailEncypted); 
     var strURL = strURLBase + strURLParam; //encodeURI(strURLParam)
@@ -105,8 +105,7 @@ function fnLogin() {
     
     $.ajax({
         url: strURL,
-        crossDomain: true,
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function (data) {
             $.mobile.loading('hide');
             $("#btnLogin").text('Log in');

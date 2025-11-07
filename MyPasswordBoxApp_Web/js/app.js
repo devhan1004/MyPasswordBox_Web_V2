@@ -124,10 +124,14 @@ function convertToUnorderedlist(itemList) {
 
 
 // get Parameter value by ID from Querystring
-function getParameterByName(ID) {
-    var questionTypeID = RegExp('[?&]' + ID + '=([^&]*)').exec(window.location.search);
-    return questionTypeID && decodeURIComponent(questionTypeID[1].replace(/\+/g, ' '));
+function getParameterByName(name) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(name);
 }
+//function getParameterByName(ID) {
+//    var questionTypeID = RegExp('[?&]' + ID + '=([^&]*)').exec(window.location.search);
+//    return questionTypeID && decodeURIComponent(questionTypeID[1].replace(/\+/g, ' '));
+//}
 
 
 /** Alert Dialog **/

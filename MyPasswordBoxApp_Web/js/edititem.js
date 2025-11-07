@@ -18,8 +18,8 @@ $(document).one('pageinit', '#index', function () {
         console.log('Site ID:' + strSiteID);
         if (!strSiteID) return;
 
-        //var uri = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/Q_SiteByID?ID=1&callback=aa';
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+        //var uri = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/Q_SiteByID?ID=1&callback=aa';
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
         var strURLParam = 'Q_SiteByID?';
         strURLParam += "ID=" + strSiteID;
         var strURL = strURLBase + strURLParam;
@@ -27,8 +27,7 @@ $(document).one('pageinit', '#index', function () {
 
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 console.log('received data successfully');
                 console.log(data);
@@ -110,8 +109,8 @@ $(document).one("pagecreate", "#index", function () {
 
         var strSiteID = getParameterByName("SiteID");
 
-        ////https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/I_Site?AccountID=1075&lKUPSiteID=&siteName=amazontest&siteUserName=aaaa&sitePassword=1211&notes=&callback=aa
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+        ////https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/I_Site?AccountID=1075&lKUPSiteID=&siteName=amazontest&siteUserName=aaaa&sitePassword=1211&notes=&callback=aa
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
         var strURLParam = 'U_Site?';        
         strURLParam += "siteID=" + strSiteID;
         strURLParam += "&AccountID=" + userInfo.UserAccountID;
@@ -128,8 +127,7 @@ $(document).one("pagecreate", "#index", function () {
         var bRet = false;
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 console.log("success to send data");
                 console.log(data);

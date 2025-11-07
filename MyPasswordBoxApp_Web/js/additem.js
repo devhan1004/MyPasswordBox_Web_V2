@@ -67,8 +67,8 @@ $(document).one("pagecreate", "#index", function () {
         console.log(strPasswordEncypted);
         console.log(strNoteEncypted);
 
-        ////https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/I_Site?AccountID=1075&lKUPSiteID=&siteName=amazontest&siteUserName=aaaa&sitePassword=1211&notes=&callback=aa
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/site/';
+        ////https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/I_Site?AccountID=1075&lKUPSiteID=&siteName=amazontest&siteUserName=aaaa&sitePassword=1211&notes=&callback=aa
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
         var strURLParam = 'I_Site?';
         strURLParam += "AccountID=" + userInfo.UserAccountID
         strURLParam += "&lKUPSiteID="
@@ -83,8 +83,7 @@ $(document).one("pagecreate", "#index", function () {
         var bRet = false;
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 console.log("success to send data");
                 console.log(data);

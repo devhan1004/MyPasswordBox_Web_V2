@@ -61,8 +61,8 @@ $(document).one("pagecreate", "#index", function () {
         var strPassKey = getPassKeyString(strEmail, strEmail, strAdditionalKeyword);
         var strBirthDateEncypted = getEncryption(strBirthDate, strPassKey);
 
-        //https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/Q_AccountByUserName?UserName=wPON//zJ2JZbWj6UPaZT9PypW7eHFgosjmRkPdxubGU=@gmail.com&callback=aa
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/';
+        //https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/Q_AccountByUserName?UserName=wPON//zJ2JZbWj6UPaZT9PypW7eHFgosjmRkPdxubGU=@gmail.com&callback=aa
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/';
         var strURLParam = 'Q_AccountByUserName?';
         strURLParam += "UserName=" + encodeURIComponent(strEmailEncypted);
         var strURL = strURLBase + strURLParam;
@@ -73,8 +73,7 @@ $(document).one("pagecreate", "#index", function () {
 
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 console.log(data);
                 if (typeof data[0] !== 'undefined') {
@@ -141,7 +140,7 @@ function SendVerficationCode(strEmail, strPassKey, strEmailEncypted) {
     var PasswordResetCode = Math.floor((Math.random() * (9999 - 2000)) + 2000);
     console.log("send verification code");
 
-    var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/';
+    var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/';
     var strURLParam = 'SendVerificationCode?';
     strURLParam += "SendTo=" + strEmail;
     strURLParam += "&VeriCode=" + PasswordResetCode;
@@ -152,8 +151,7 @@ function SendVerficationCode(strEmail, strPassKey, strEmailEncypted) {
 
     $.ajax({
         url: strURL,
-        crossDomain: true,
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function (data) {
             console.log(data);
             if (typeof data !== 'undefined'

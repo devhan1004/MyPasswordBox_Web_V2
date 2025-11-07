@@ -70,8 +70,8 @@ $(document).one("pagecreate", "#index", function () {
         var strPasswordEncypted = getEncryption(strPassword, strPassKey);
         console.log("strPasswordEncypted :" + strPasswordEncypted);
 
-        //https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/AccountSPs?UserName=devhan2@gmail.com&Password=test1111&Birthday=1/1/2016&spType=I_Account
-        var strURLBase = 'https://mypasswordboxweb-gkgma8bdcpdag7h5.eastus2-01.azurewebsites.net/api/account/';
+        //https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/AccountSPs?UserName=devhan2@gmail.com&Password=test1111&Birthday=1/1/2016&spType=I_Account
+        var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/account/';
         var strURLParam = 'U_AccountPasswordByUserName?';
         strURLParam += "userName=" + encodeURIComponent(PasswordResetInfo.userEmailEnc);
         strURLParam += "&Password=" + encodeURIComponent(strPasswordEncypted);
@@ -87,8 +87,7 @@ $(document).one("pagecreate", "#index", function () {
         var bRet = false;
         $.ajax({
             url: strURL,
-            crossDomain: true,
-            dataType: 'jsonp',
+            dataType: 'json',
             success: function (data) {
                 var len = data.length;
                 bRet = true;
