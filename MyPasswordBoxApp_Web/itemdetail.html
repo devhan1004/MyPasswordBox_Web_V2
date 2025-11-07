@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Item Detail</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />-->
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/aes.js"></script>    
+
+</head>
+<body>
+
+    <div data-role="page" id="index">
+        <!---->
+
+        <div data-role="header" data-theme="b" data-position="xfixed">
+            <a href="itemlist.html" rel="external" data-theme="a" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left">Back</a>
+
+            <h1>Item Detail</h1>
+
+            <a id="lnkEdit" href="edititem.html" rel="external" data-theme="a" class="ui-btn ui-corner-all" data-icon="">Edit</a>
+        </div>
+        <!---->
+        <div role="main" class="ui-content">
+            <form class="cmxform" id="signupForm" method="get" action="">
+                <div>
+                    <div class="dispInlineLabel">
+                        <label style="font-weight:bold;">Site Name:</label>
+                    </div>
+                    <div class="dispInline">
+                        <span id="lblSiteName"></span>
+                    </div>
+                    <div class="clearFloats"></div>
+                    <hr />
+                    <br />
+                    
+                    <div class="dispInlineLabel">
+                        <label style="font-weight:bold;">User ID:</label>
+                    </div>
+                    <div class="dispInline">
+                        <span id="lblUserName"></span>
+                    </div>
+                    <div class="clearFloats"></div>
+                    <br />
+                      
+                    <div class="dispInlineLabel">
+                        <label style="font-weight:bold;">Password:</label>                        
+                    </div>
+                    <div class="dispInline">
+                        <input id="pwSwitch" name="pwSwitch" type="checkbox" data-role="flipswitch" data-on-text="show" data-off-text="hide">
+                        <span id="lblUserEncPassword"></span>
+                        <span id="lblUserPassword"></span>
+                    </div>
+                    <div class="clearFloats"></div>
+                    <br />
+ 
+
+                    <div class="dispInlineLabel">
+                        <label style="font-weight:bold;">Note:</label>
+                    </div>
+                    <div class="dispInline">
+                        <span id="lblNote"></span>
+                    </div>
+                    <div class="clearFloats"></div>
+                    
+                </div>
+
+                <br />
+                
+            </form>
+
+            <a id="lnkEdit1"  href="#" data-theme="b" rel="external" class="ui-btn ui-corner-all ui-btn-b" data-icon="">Edit</a>
+
+            <!--wihout link change
+            <a id="lnkEdit2" href="edititem.html" data-theme="b" rel="external" class="ui-btn ui-corner-all ui-btn-b" data-icon="">Edit</a>
+            
+            
+            
+            <hr />
+            <button id="btnEdit"  class="ui-btn ui-corner-all ui-btn-b" type="submit">Edit</button>
+            
+            <a id="lnkEdit2" onclick="fnEditItem();" href="#" data-theme="b" rel="external" class="ui-btn ui-corner-all ui-btn-b" data-icon="">Edit</a>
+            <button id="btnEdit2" onclick="fnEditItem();" class="ui-btn ui-corner-all ui-btn-b" type="submit">Edit</button>-->
+            
+            <br />
+            <button id="btnDelete" class="ui-btn ui-corner-all ui-btn-b" type="submit">Delete</button>
+
+            
+        </div>
+
+
+        <div data-role="footer" data-id="Nav" data-position="fixed">
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="index.html" data-icon="home" data-theme="b" rel="external">Home</a></li>
+                    <li><a href="itemlist.html" data-icon="bars" data-theme="b" rel="external">List</a></li>
+                    <li><a href="noaccount.html" data-icon="user" data-theme="b" rel="external">Account</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/itemdetail.js"></script>
+        <script type="text/javascript">
+        app.initialize();
+        </script>
+
+
+    </div>
+
+
+    <div id="divAlert" data-role="dialog" data-title="Are you sure?">
+        <div data-role="header">
+            <h2 class="alertTitle"></h2>
+        </div>
+        <div data-role="content">
+
+            <p class="alertSubTitle"></p>
+            <p class="alertMessage"></p>
+
+            <br />
+            <br />
+            <div id="divOk" style="text-align:center;width:100%;">
+                <a id="btnOK" href="#" class="sure-do" data-role="button" data-theme="b" data-ajax="false">OK</a>
+            </div>
+            <div id="divClose" style="text-align:center;width:100%;">
+                <a id="btnClose" href="#" data-role="button" data-theme="b" data-rel="back">OK</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

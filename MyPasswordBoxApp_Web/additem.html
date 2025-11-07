@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Add</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />-->
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/aes.js"></script>    
+
+</head>
+<body>
+    <div data-role="page" id="index">
+        <div data-role="header" data-theme="b">
+            <a href="itemlist.html" rel="external" data-theme="a" data-icon="delete" data-iconpos="left" class="ui-btn-left ui-corner-all">Cancel</a>
+            <h1>Add password</h1>            
+        </div>
+
+        <div role="main" class="ui-content">
+            
+            <form class="cmxform" id="signupForm" method="get" action="">
+
+                <span id="lblNotes1" class="encryptValue">
+                    Notes to add item:
+                    <ol>
+                        <li>
+                            Your Site Name, User Name, Password, and note will be saved as encrypted format with your birthday, and security key.
+                        </li>
+                        <li>
+                            Without knowing your birthday, and security key, this data can not be decrypted.
+                        </li>
+
+                    </ol>
+                </span>
+
+
+                <!--<div class="ui-field-contain">
+            <label>Select Site:</label>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <select id="siteLKUPList" name="birthYear"></select>
+            </fieldset>
+        </div>-->
+
+                <div class="ui-field-contain">
+                    <label for="txtSiteName">Site Name:</label>
+                    <input type="email" id="txtSiteName" placeholder="Enter Site Name" data-clear-btn="true" value="" width="100px" class="required" minlength="5" />
+                </div>
+
+
+                <div class="ui-field-contain">
+                    <label for="txtUserName">User Name or Email:</label>
+                    <input type="email" id="txtUserName" placeholder="Enter User Name or Email" data-clear-btn="true" value="" width="100px" class="required" minlength="5" />
+                </div>
+
+
+                <div class="ui-field-contain">
+                    <label for="txtPassword">Password:</label>
+                    <input type="text" id="txtPassword" placeholder="Enter Password" data-clear-btn="true" value="" width="100px" class="required" minlength="5" />
+                </div>
+                <div class="ui-field-contain">
+                    <label for="txtNote">Note:</label>
+                    <fieldset>
+                        <textarea id="txtNote" placeholder="Enter Note" data-clear-btn="true" value=""></textarea>
+                    </fieldset>
+                </div>
+
+                
+            </form>
+
+            <button id="btnSave" name="btnSave" class="ui-btn ui-corner-all ui-btn-b" type="submit">Save</button>
+
+</div>
+
+
+
+
+        
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/additem.js"></script>
+        <script type="text/javascript">
+        app.initialize();
+        </script>
+
+    </div>
+
+
+    <div id="divAlert" data-role="dialog" data-title="Are you sure?">
+        <div data-role="header"  data-theme="b">
+            <h2 class="alertTitle"></h2>
+        </div>
+        <div data-role="content">
+
+            <p class="alertSubTitle"></p>
+            <p class="alertMessage"></p>
+
+            <br />
+            <br />
+            <div id="divOk" style="text-align:center;width:100%;">
+                <a id="btnOK" href="#" class="sure-do" data-role="button" data-theme="b" data-ajax="false">OK</a>
+            </div>
+            <div id="divClose" style="text-align:center;width:100%;">
+                <a id="btnClose" href="#" data-role="button" data-theme="b" data-rel="back">OK</a>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

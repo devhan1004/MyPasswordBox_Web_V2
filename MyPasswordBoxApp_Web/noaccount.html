@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />-->
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/aes.js"></script>    
+
+
+</head>
+<body>
+
+    <div data-role="page" id="index">
+        <!---->
+
+        <div data-role="header" data-theme="b">
+            <a href="index.html" rel="external" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-btn-a">Cancel</a>
+            <h1>Account</h1>
+            <!--<button id="btnLogin" class="ui-btn-right ui-btn ui-btn-b ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-check">
+                Login
+            </button>-->
+        </div>
+        <!--<div data-role="header">
+            <a href="index.html" data-role="button" data-icon="home" data-iconpos="left">Home</a>
+            <h1>Sign in</h1>
+            <button id="btnLogin" class="ui-btn-right ui-corner-all">Login</button>
+        </div>-->
+        <!---->
+        <div role="main" class="ui-content">
+            <div id="loginForm">
+
+
+                <br />
+                <a href="login.html" class="ui-btn ui-corner-all ui-btn-b" rel="external">Login</a>
+                <br />
+                <a href="forgotpassword.html" class="ui-btn ui-corner-all ui-btn-b" rel="external">Forgot password</a>
+                <br />
+                <a href="signup.html" class="ui-btn ui-corner-all ui-btn-b" rel="external">Create account</a>
+
+            </div>
+        </div>
+
+
+
+
+        <!--<div data-role="footer" data-id="Nav" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html" data-role="button" data-icon="home" data-iconpos="left" rel="external">Home</a></li>
+                    <li><a href="signup.html" class="ui-btn ui-corner-all" data-icon="user" rel="external">Create Account</a></li>
+                </ul>
+            </div>
+        </div>-->
+
+        
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/noaccount.js"></script>
+        <script type="text/javascript">
+        app.initialize();
+        </script>
+
+
+    </div>
+
+
+    <div id="divAlert" data-role="dialog" data-title="Are you sure?">
+        <div data-role="header">
+            <h2 class="alertTitle"></h2>
+        </div>
+        <div data-role="content">
+
+            <p class="alertSubTitle"></p>
+            <p class="alertMessage"></p>
+
+            <br />
+            <br />
+            <div id="divOk" style="text-align:center;width:100%;">
+                <a id="btnOK" href="#" class="sure-do" data-role="button" data-theme="b" data-ajax="false">OK</a>
+            </div>
+            <div id="divClose" style="text-align:center;width:100%;">
+                <a id="btnClose" href="#" data-role="button" data-theme="b" data-rel="back">OK</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

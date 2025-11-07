@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />-->
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+    
+    <script src="js/jquery.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>    
+    <script src="js/aes.js"></script>
+    
+    <script>
+        //document.addEventListener('deviceready', function () {            
+        //    //StatusBar.overlaysWebView(false);
+        //    //StatusBar.backgroundColorByName('green');
+        //    //alert("StatusBar ok");
+        //}, false);
+    </script>
+
+    <style>
+        img {
+            border: 1px solid #;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+
+    <div data-role="page" id="index">
+        <!---->
+
+        <div data-role="header" data-theme="b" data-position="fixed" >
+            <!--<a data-role="button" data-rel="back" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="a">Back</a>-->
+            <a id="btnSignUp" href="signup.html" class="ui-btn-left" data-iconpos="left" rel="external" data-theme="a">Sign Up</a>
+            <a id="btnLogOut" class="ui-btn-left" data-iconpos="left" data-theme="a" >Log out</a>
+            <h4>
+                My Password Box
+            </h4>
+            <a id="btnLogin" href="login.html" class="ui-btn-right" data-iconpos="right" rel="external"  data-theme="a">Log in</a>
+            <div style="margin-top: 0px; margin-bottom: -10px;   padding: -10px;">&nbsp;</div>
+        </div>
+
+        <!---->
+        <div role="main" class="ui-content"  style="background-color:white;">
+                        
+            <h2 class="centerText">Protect your passwords with My Password Box</h2>            
+
+            <h4>
+                <ul>                    
+                    <li>All your data is encrypted with a password key that you create</li>
+                    <li>This personal password key will not be saved by the app.</li>
+                    <li>Without your own personal key, you will not be able to access your passwords.</li>
+                </ul>
+                
+            </h4>
+            
+             
+            <!--<div style="float:left; padding-right:2px;">
+                <img src="images/Lock.ico" width="40px"  />
+            </div>
+
+            <h4>
+                Without your own personal key, you will not be able to access your passwords.
+            </h4>-->
+            
+            
+            <div class="centerText">
+                <img src="images/security.jpg" onclick="ShowAD()"  width="250px" />
+            </div>
+
+            <!--<button id="showAd">Show me some AD</button>-->
+            <!--<div id="showAD" onclick="ShowAD()" >.</div>-->
+        </div>
+
+        <div id="divFootter" data-role="footer" data-id="Nav" data-position="fixed" >
+            <div data-role="navbar" data-iconpos="left">
+                <ul>
+                    <li><a href="index.html" class="ui-btn-active" data-theme="b" data-icon="home" rel="external">Home</a></li>
+                    <li id="liItemList"><a id="btnItemList" href="itemlist.html" data-icon="bars" data-theme="b"  rel="external">List</a></li>                    
+                    <li><a href="noaccount.html" data-icon="user" data-theme="b" rel="external">Account</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+    
+
+</body>
+</html>
