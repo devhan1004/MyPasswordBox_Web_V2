@@ -99,8 +99,6 @@ $(document).one("pagecreate", "#index", function () {
         //console.log(encodeURIComponent(strPasswordEncypted));
 
 
-        jQuery.support.cors = true;
-        var bRet = false;
         $.ajax({
             url: strURL,
             dataType: 'json',

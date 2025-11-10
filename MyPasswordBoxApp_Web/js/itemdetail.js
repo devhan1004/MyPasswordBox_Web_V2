@@ -1,21 +1,18 @@
 ﻿
 $(document).on('pagebeforeshow', '#index', function () {
-    //console.log("index pagebeforeshow");
-
     var userInfo = GetUserInfoData();
-    //console.log(userInfo);
-    if (userInfo) {
-        var userEmail = userInfo.userEmail;
-        //alert(userEmail);
-    }
-    else {
-        //$(":mobile-pagecontainer").pagecontainer("change", "login.html");
+    if (!userInfo) {
         location.href = "login.html";
         return;
     }
+    var strPassKey = userInfo.userPasskey;
 
     try {
         var strSiteID = getParameterByName("SiteID");
+        if (!strSiteID) {
+            alert("Missing SiteID.");
+            return;
+        }
 
         //var uri = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/Q_SiteByID?ID=1&callback=aa';
         var strURLBase = 'https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/';
@@ -30,25 +27,33 @@ $(document).on('pagebeforeshow', '#index', function () {
             url: strURL,
             dataType: 'json',
             success: function (data) {
-                var len = data.length;
-                var siteItem = {
-                    "SiteID": data[0]["SiteID"],
-                    "SiteName": data[0]["SiteName"],
-                    "SiteUserName": data[0]["SiteUserName"],
-                    "SitePassword": data[0]["SitePassword"],
-                    "Notes": data[0]["Notes"],
-                };
-                console.log(siteItem);
-                var strPassKey = userInfo.userPasskey;
+                if (!data || data.length === 0) {
+                    alert("No data found for this site.");
+                    return;
+                }
 
-                $("#lblSiteName").text(getDecryption(siteItem.SiteName, strPassKey));
-                $("#lblUserName").text(getDecryption(siteItem.SiteUserName, strPassKey));                
-                $("#lblUserEncPassword").text("~~~" + siteItem.SitePassword.toString().substring(10, 20) + "~~~");
-                $("#lblUserPassword").text(getDecryption(siteItem.SitePassword, strPassKey));
-                $("#lblNote").text(getDecryption(siteItem.Notes, strPassKey));
+                // ✅ Decode before decrypt
+                var siteName = getDecryption(decodeURIComponent(data.SiteName), strPassKey);
+                var userName = getDecryption(decodeURIComponent(data.SiteUserName), strPassKey);
+                var password = getDecryption(decodeURIComponent(data.SitePassword), strPassKey);
+                var notes = getDecryption(decodeURIComponent(data.Notes), strPassKey);
 
+
+                 
+                // ✅ Display decrypted values
+                $("#lblSiteName").text(siteName);
+                $("#lblUserName").text(userName);
+                $("#lblUserEncPassword").text("~~~" + data.SitePassword.toString().substring(10, 20) + "~~~");
+                $("#lblUserPassword").text(password);
+                $("#lblNote").text(notes);
+
+                // Hide password by default
                 $("#lblUserEncPassword").hide();
                 $("#lblUserPassword").hide();
+            },
+            error: function (xhr, status, error) {
+                console.error("Failed to load site:", error);
+                alert("Error loading site. Please try again.");
             }
         });
 
@@ -58,15 +63,8 @@ $(document).on('pagebeforeshow', '#index', function () {
 });
 
 
+// ✅ Delete handler
 $(document).one("pagecreate", "#index", function () {
-
-    //$(document).on("click", "#btnEdit", function () {
-        
-    //    var strSiteID = getParameterByName("SiteID");
-    //    alert("edititem.html?SiteID=" + strSiteID);
-    //    $(':mobile-pagecontainer').pagecontainer('change', "edititem.html?SiteID=" + strSiteID, { changeHash: false });
-
-    //});
 
 
     $(document).on("click", "#btnDelete", function () {
@@ -81,87 +79,48 @@ $(document).one("pagecreate", "#index", function () {
         var strURL = strURLBase + strURLParam;
 
        
-        jQuery.support.cors = true;
-        var bRet = false;
         $.ajax({
             url: strURL,
             dataType: 'json',
             success: function (data) {
                 console.log("success to delete data");
-                console.log(data);
-                var len = data.length;
-                if (data == '-2') {
-                    var alertMsgList = [];
 
-                    showErrorDialog("Error:",
-                                    "Failed to delete, Please try it again.",
-                                    convertToUnorderedlist(alertMsgList),
-                                    "",
-                                    "");
-                }
-                else {
-                    console.log("opening confirmation");
-                    
-                    showErrorDialog("Saved",
-                                    "Successfully Deleted.",
-                                    "",
-                                    "OK",
-                                    function () {
-                                        bRet = true;
-                                        console.log('ok click function');                                        
-                                        /*$(':mobile-pagecontainer').pagecontainer('change', 'itemlist.html', { changeHash: false });*/
-                                        location.href = "itemlist.html";
-                                    });
-                    console.log("Finished confirmation");
-                }
+                console.log("opening confirmation");
 
-            },
-            complete: function () {
-
-
-            },
+                showErrorDialog("Deleted",
+                    "Successfully Deleted.",
+                    "",
+                    "OK",
+                    function () {
+                        bRet = true;
+                        console.log('ok click function');
+                        /*$(':mobile-pagecontainer').pagecontainer('change', 'itemlist.html', { changeHash: false });*/
+                        location.href = "itemlist.html";
+                });
+                console.log("Finished confirmation");
+            },            
             error: function (jqXHR, error, errorThrown) {
-                alert('Error');
-                alert("Error: " + jqXHR.responseText +
-                       ' : ' + errorThrown +
-                       ' : ' + JSON.stringify(jqXHR));
-                if (jqXHR.status && jqXHR.status == 400) {
-                    //alert(jqXHR.responseText);
-                } else {
-                    //alert("error");
-                }
-
+                console.error("Delete failed:", jqXHR.responseText);
+                alert("Error deleting site. Please try again.");
             }
         });
     });
 });
 
 
+// ✅ Password show/hide toggle
 $("#pwSwitch").change(function () {
-    var bChecked = $(this).is(":checked");
-    if (bChecked)
-    {
-        //$("#lblUserEncPassword").hide();
+    if ($(this).is(":checked")) {
         $("#lblUserPassword").show();
-    }        
-    else
-    {
-        //$("#lblUserEncPassword").show();
+    } else {
         $("#lblUserPassword").hide();
     }
-
 });
 
 
+
+// ✅ Edit button (optional navigation helper)
 function fnEditItem() {
-    
-    alert("fnEditItem is clicked");
-    console.log("fnEditItem is clicked");
-
-    var strSiteID = getParameterByName("SiteID");    
-
-    //$.mobile.changePage("edititem.html?SiteID=" + strSiteID, { transition: "slideup", changeHash: false });
-
+    var strSiteID = getParameterByName("SiteID");
     $(':mobile-pagecontainer').pagecontainer("change", "edititem.html?SiteID=" + strSiteID, { changeHash: false });
-
 }

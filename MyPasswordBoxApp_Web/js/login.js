@@ -110,23 +110,13 @@ function fnLogin() {
             $.mobile.loading('hide');
             $("#btnLogin").text('Log in');
             //console.log(data);            
-            if (typeof data[0] != 'undefined') {
+            if (typeof data != 'undefined') {
                 //console.log(data[0]);
-                var intAccountID = data[0]["AccountID"];
-                var strPasswordFromDB = decodeURIComponent(data[0]["Password"]);
+                var intAccountID = data["AccountID"];
+                var strPasswordFromDB = decodeURIComponent(data["Password"]);
 
                 var strPassKey = getPassKeyString(strEmail, strEmail, strAdditionalKeyword);
                 var strPasswordFromDBDecrypted = getDecryption(strPasswordFromDB, strPassKey);
-
-
-                //var strEmailEncyptedNew = getStaticEncryption(strEmail, strAdditionalKeyword);
-                //console.log("strEmailEncyptedNew is : " + strEmailEncyptedNew);
-                //console.log("strEmailEncyptedNew to db is : " + encodeURIComponent(strEmailEncyptedNew));
-                
-                //console.log("password is : " + strPassword);
-                //console.log("decrypted password is : " + strPasswordFromDBDecrypted);
-                //var strPasswordFromDBDecrypted = getDecryption(strPasswordEncypted.toString(), strPassKey);
-                //alert(strPasswordFromDBDecrypted);
 
                 if (strPassword == strPasswordFromDBDecrypted) {
 

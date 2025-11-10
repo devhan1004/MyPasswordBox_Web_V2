@@ -2,16 +2,11 @@
 $(document).one('pageinit', '#index', function () {
 
     var userInfo = GetUserInfoData();
-    //console.log(userInfo);
-    if (userInfo) {
-        var userEmail = userInfo.userEmail;
-        //alert(userEmail);
-    }
-    else {
-        //$(":mobile-pagecontainer").pagecontainer("change", "login.html");
+    if (!userInfo) {
         location.href = "login.html";
         return;
-    }    
+    }
+    var strPassKey = userInfo.userPasskey;
 
     try {
         var strSiteID = getParameterByName("SiteID");
@@ -29,24 +24,22 @@ $(document).one('pageinit', '#index', function () {
             url: strURL,
             dataType: 'json',
             success: function (data) {
-                console.log('received data successfully');
-                console.log(data);
-                var len = data.length;
-                var siteItem = {
-                    "SiteID": data[0]["SiteID"],
-                    "SiteName": data[0]["SiteName"],
-                    "SiteUserName": data[0]["SiteUserName"],
-                    "SitePassword": data[0]["SitePassword"],
-                    "Notes": data[0]["Notes"],
-                };
-                console.log(siteItem);
-                var strPassKey = userInfo.userPasskey;
+                if (!data || data.length === 0) {
+                    alert("No data found for this site.");
+                    return;
+                }
+
+                // ✅ Decode before decrypt
+                var siteName = getDecryption(decodeURIComponent(data.SiteName), strPassKey);
+                var siteUserName = getDecryption(decodeURIComponent(data.SiteUserName), strPassKey);
+                var sitePassword = getDecryption(decodeURIComponent(data.SitePassword), strPassKey);
+                var notes = getDecryption(decodeURIComponent(data.Notes), strPassKey);
 
                 
-                $("#txtSiteName").val(getDecryption(siteItem.SiteName, strPassKey));
-                $("#txtUserName").val(getDecryption(siteItem.SiteUserName, strPassKey));
-                $("#txtPassword").val(getDecryption(siteItem.SitePassword, strPassKey));
-                $("#txtNote").val(getDecryption(siteItem.Notes, strPassKey));
+                $("#txtSiteName").val(siteName);
+                $("#txtUserName").val(siteUserName);
+                $("#txtPassword").val(sitePassword);
+                $("#txtNote").val(notes);
 
                 return;
                 
@@ -129,67 +122,40 @@ $(document).one("pagecreate", "#index", function () {
             url: strURL,
             dataType: 'json',
             success: function (data) {
-                console.log("success to send data");
-                console.log(data);
+
                 $("#btnSave").text('Save');
-                var len = data.length;
-                if (data == '-2') {
-                    var alertMsgList = [];
 
-                    showErrorDialog("Error:",
-                                    "Your information failed to save, Please try it again.",
-                                    convertToUnorderedlist(alertMsgList),
-                                    "",
-                                    "");
-                }
-                else {
-                    console.log("opening confirmation");
-                    var confirmList = [];
-                    confirmList.push("Site Name: " +
-                                        "<span style='font-size:xx-small'>" + "~~~" + strSiteNameEncrypted.toString().substring(10, 40) + "~~~" + "</span>");
-                    confirmList.push("User Name: " +
-                                        "<span style='font-size:xx-small'>" + "~~~" + strUserNameEncrypted.toString() + "~~~" + "</span>");
-                    confirmList.push("Password: " +
-                                        "<span style='font-size:xx-small'>" + "~~~" + strPasswordEncypted.toString().substring(10, 40) + "~~~" + "</span>");
-                    confirmList.push("Note: " +
-                                        "<span style='font-size:xx-small'>" + "~~~" + strNoteEncypted.toString().substring(10, 40) + "~~~" + "</span>");
+                console.log("opening confirmation");
+                var confirmList = [];
+                confirmList.push("Site Name: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strSiteNameEncrypted.toString().substring(10, 40) + "~~~" + "</span>");
+                confirmList.push("User Name: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strUserNameEncrypted.toString() + "~~~" + "</span>");
+                confirmList.push("Password: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strPasswordEncypted.toString().substring(10, 40) + "~~~" + "</span>");
+                confirmList.push("Note: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strNoteEncypted.toString().substring(10, 40) + "~~~" + "</span>");
 
 
-                    showErrorDialog("Updated",
-                                    "Your information is successfully updated as encrypted. Here is the part of the encrypted content.",
-                                    convertToUnorderedlist(confirmList),
-                                    "OK",
-                                    function () {
-                                        bRet = true;
-                                        console.log('ok click function');
-                                        //$.mobile.navigate("itemlist.html", { transition: "slide" });
-                                        location.href = "itemlist.html";
-                                    });
-                    console.log("Finished confirmation");
-                }
+                showErrorDialog("Updated",
+                    "Your information is successfully updated as encrypted. Here is the part of the encrypted content.",
+                    convertToUnorderedlist(confirmList),
+                    "OK",
+                    function () {
+                        bRet = true;
+                        console.log('ok click function');
+                        //$.mobile.navigate("itemlist.html", { transition: "slide" });
+                        location.href = "itemlist.html";
+                    });
+                console.log("Finished confirmation");
 
             },
-            complete: function () {
-
-                
-            },
-            error: function (jqXHR, error, errorThrown) {
-                $("#btnSave").text('Save');
-                alert('Error');
-                alert("Error: " + jqXHR.responseText +
-                        ' : ' + errorThrown +
-                        ' : ' + JSON.stringify(jqXHR));
-                if (jqXHR.status && jqXHR.status == 400) {
-                    //alert(jqXHR.responseText);
-                } else {
-                    //alert("error");
-                }
-
+             
+            error: function (xhr, status, error) {
+                console.error("Failed to load site:", error);
+                alert("Error loading site. Please try again.");
             }
         });
-
-
-
 
     });
 });

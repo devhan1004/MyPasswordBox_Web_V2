@@ -79,7 +79,7 @@ $(document).one("pagecreate", "#index", function () {
         var strURL = strURLBase + strURLParam;
         console.log("strURL:", strURL);
 
-        jQuery.support.cors = true;
+        
         var bRet = false;
         $.ajax({
             url: strURL,
@@ -88,41 +88,31 @@ $(document).one("pagecreate", "#index", function () {
                 console.log("success to send data");
                 console.log(data);
                 $("#btnSave").text('Save');
-                var len = data.length;
-                if (data == '-2') {
-                    var alertMsgList = [];
 
-                    showErrorDialog("Error:",
-                                    "Your information failed to save, Please try it again.",
-                                    convertToUnorderedlist(alertMsgList),
-                                    "",
-                                    "");
-                }
-                else {
-                    console.log("opening confirmation");
-                    var confirmList = [];
-                    confirmList.push("Site Name: " +
-                                     "<span style='font-size:xx-small'>" + "~~~" + strSiteNameEncrypted.toString().substring(10, 40) + "~~~" + "</span>");
-                    confirmList.push("User Name: " +
-                                     "<span style='font-size:xx-small'>" + "~~~" + strUserNameEncrypted.toString() + "~~~" + "</span>");
-                    confirmList.push("Password: " +
-                                     "<span style='font-size:xx-small'>" + "~~~" + strPasswordEncypted.toString().substring(10, 40) + "~~~" + "</span>");
-                    confirmList.push("Note: " +
-                                     "<span style='font-size:xx-small'>" + "~~~" + strNoteEncypted.toString().substring(10, 40) + "~~~" + "</span>");
+                console.log("opening confirmation");
+                var confirmList = [];
+                confirmList.push("Site Name: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strSiteNameEncrypted.toString().substring(10, 40) + "~~~" + "</span>");
+                confirmList.push("User Name: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strUserNameEncrypted.toString() + "~~~" + "</span>");
+                confirmList.push("Password: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strPasswordEncypted.toString().substring(10, 40) + "~~~" + "</span>");
+                confirmList.push("Note: " +
+                    "<span style='font-size:xx-small'>" + "~~~" + strNoteEncypted.toString().substring(10, 40) + "~~~" + "</span>");
 
 
-                    showErrorDialog("Saved",
-                                    "Your information is successfully saved as encrypted. Here is the part of the encrypted content.",
-                                    convertToUnorderedlist(confirmList),
-                                    "OK",
-                                    function () {
-                                        bRet = true;
-                                        console.log('ok click function');
-                                        //$.mobile.navigate("itemlist.html", { transition: "slide" });
-                                        location.href = "itemlist.html";
-                                    });
-                    console.log("Finished confirmation");
-                }
+                showErrorDialog("Saved",
+                    "Your information is successfully saved as encrypted. Here is the part of the encrypted content.",
+                    convertToUnorderedlist(confirmList),
+                    "OK",
+                    function () {
+                        bRet = true;
+                        console.log('ok click function');
+                        //$.mobile.navigate("itemlist.html", { transition: "slide" });
+                        location.href = "itemlist.html";
+                    });
+                console.log("Finished confirmation");
+
 
             },
             complete: function () {

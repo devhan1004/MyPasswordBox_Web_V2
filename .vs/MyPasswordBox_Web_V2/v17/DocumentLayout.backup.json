@@ -3,19 +3,23 @@
   "WorkspaceRootPath": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\mypasswordboxapp_web\\js\\itemlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\itemlist.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|c:\\workplace\\mywebsites_in_azure\\mypasswordbox_web_v2\\mypasswordbox_web_v2\\mypasswordboxapp_web\\js\\edititem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\edititem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|c:\\workplace\\mywebsites_in_azure\\mypasswordbox_web_v2\\mypasswordbox_web_v2\\mypasswordboxapp_web\\js\\additem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|c:\\workplace\\mywebsites_in_azure\\mypasswordbox_web_v2\\mypasswordbox_web_v2\\mypasswordboxapp_web\\js\\itemdetail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\itemdetail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\mypasswordboxapp_web\\js\\additem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\additem.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|c:\\workplace\\mywebsites_in_azure\\mypasswordbox_web_v2\\mypasswordbox_web_v2\\mypasswordboxapp_web\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|c:\\workplace\\mywebsites_in_azure\\mypasswordbox_web_v2\\mypasswordbox_web_v2\\mypasswordboxapp_web\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\mypasswordboxapp_web\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{E36E98DF-B7A3-B938-D66B-C0C90AA67825}|C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web|solutionrelative:mypasswordboxapp_web\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
@@ -26,34 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 27,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "edititem.js",
-              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\edititem.js",
-              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\edititem.js",
-              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\edititem.js",
-              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\edititem.js",
-              "ViewState": "AgIAAH0AAAAAAAAAAAD4v4EAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-07T16:30:28.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "additem.js",
-              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\additem.js",
-              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\additem.js",
-              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\additem.js",
-              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\additem.js",
-              "ViewState": "AgIAAFAAAAAAAAAAAAD4v1UAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-07T16:30:18.402Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1749609364:0:{bf84ea66-d821-4dba-b1b1-2777d8574775}"
@@ -160,28 +138,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "itemdetail.js",
+              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\itemdetail.js",
+              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\itemdetail.js",
+              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\itemdetail.js",
+              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\itemdetail.js",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-10T19:30:44.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "itemlist.js",
+              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\itemlist.js",
+              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\itemlist.js",
+              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\itemlist.js",
+              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\itemlist.js",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-07T16:31:06.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "edititem.js",
+              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\edititem.js",
+              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\edititem.js",
+              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\edititem.js",
+              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\edititem.js",
+              "ViewState": "AgIAABgAAAAAAAAAAAArwCIAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-07T16:30:28.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "additem.js",
+              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\additem.js",
+              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\additem.js",
+              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\additem.js",
+              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\additem.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFEAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-11-07T16:30:18.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "app.js",
               "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\app.js",
               "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\app.js",
               "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\app.js",
               "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\app.js",
-              "ViewState": "AgIAAHMAAAAAAAAAAAArwHwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-11-07T16:29:17.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "login.js",
-              "DocumentMoniker": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\login.js",
-              "RelativeDocumentMoniker": "MyPasswordBoxApp_Web\\js\\login.js",
-              "ToolTip": "C:\\Workplace\\MyWebsites_In_Azure\\MyPasswordBox_Web_V2\\MyPasswordBox_Web_V2\\MyPasswordBoxApp_Web\\js\\login.js",
-              "RelativeToolTip": "MyPasswordBoxApp_Web\\js\\login.js",
-              "ViewState": "AgIAAGEAAAAAAAAAAAArwGwAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-11-07T16:27:02.05Z",
               "EditorCaption": ""
             }
           ]
