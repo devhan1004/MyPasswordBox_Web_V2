@@ -8,6 +8,13 @@
         return;
     }
 
+
+    var $siteList = $('#SiteList').empty();
+    var $loading = $('#loadingMessage');
+
+    // Show loading message
+    $loading.show();
+
     var strURL = `https://mypasswordbox-webandapi-v2-aqb2dmd6brd2ceaw.eastus2-01.azurewebsites.net/api/site/Q_SiteByAccountID?accountID=${userInfo.UserAccountID}&spTemp=`;
     var strPassKey = userInfo.userPasskey;
 
@@ -16,6 +23,9 @@
         dataType: 'json',
         success: function (data) {
             var $siteList = $('#SiteList').empty();
+
+            // Hide loading message
+            $loading.hide();
 
             if (!data || data.length === 0) {
                 console.log("No sites found for this account.");
@@ -30,13 +40,7 @@
 
             data.forEach((item, index) => {
                 try {
-                    var decryptedName = getDecryption(decodeURIComponent(item.SiteName), strPassKey);
-
-                    if (decryptedName === "2222" || decryptedName === "test1")
-                        console.log("Decrypted:", item.SiteName, "=>", decryptedName);
-
-                    if (decryptedName && decryptedName.toString().includes("test1"))
-                        console.log("Decrypted includes test1:", decryptedName);
+                    var decryptedName = getDecryption(decodeURIComponent(item.SiteName), strPassKey);                    
 
                     if (decryptedName && decryptedName.trim() !== "") {
                         sites.push({
@@ -77,6 +81,7 @@
             $siteList.css('font-size', '50px');
         },
         error: function (xhr, status, error) {
+            $loading.hide(); // hide on error too
             console.error("Failed to load sites:", error);
             alert("Unable to load sites. Please try again later.");
         }
